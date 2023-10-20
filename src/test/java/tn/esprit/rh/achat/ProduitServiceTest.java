@@ -26,11 +26,10 @@ public class ProduitServiceTest {
     @InjectMocks
     ProduitServiceImpl produitService;
 
-    Produit produit= new Produit(1L,"test","libelle",1,new Date(5),new Date(9),new Stock(),new HashSet<>(), new CategorieProduit());
-
+    Produit produit= new Produit();
     List<Produit> ListProd = new ArrayList<Produit>(){
         {
-            add(new Produit(2L,"test2","libelle2",2,new Date(5),new Date(9),new Stock(),new HashSet<>(), new CategorieProduit()));
+            add(new Produit());
         }
     };
 
