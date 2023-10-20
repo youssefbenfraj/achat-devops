@@ -14,6 +14,7 @@ import java.util.List;
 
 @Service
 @Slf4j
+
 public class ProduitServiceImpl implements IProduitService {
 
 	@Autowired
@@ -65,6 +66,5 @@ public class ProduitServiceImpl implements IProduitService {
 		produitRepository.save(produit);
 
 	}
-
 
 }
