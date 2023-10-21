@@ -69,13 +69,7 @@
 						</exclude>
 					</excludes>
 				</configuration>
-                           <distrubutionManagement>
-                          <repository>
-                          <id>deployment repo</id>
-                          <name>Nexus Repository</name>
-                          <url>http://192.168.1.37:8081/#browse/browse:maven-releases</url>
-                          </repository>
-                           </distrubutionManagement>
+                         
 			</plugin>
 		</plugins>
 	</build>
