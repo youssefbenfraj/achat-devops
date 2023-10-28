@@ -25,6 +25,8 @@ public class CategorieProduitServiceImpl implements ICategorieProduitService {
 		return cp;
 	}
 
+
+
 	@Override
 	public void deleteCategorieProduit(Long id) {
 		categorieProduitRepository.deleteById(id);

@@ -16,3 +16,9 @@ services:
       - MYSQL_ROOT_PASSWORD=
     ports:
       - "3306:3306"
+
+  frontend-app:
+    image: ineszaghdoudi/frontdevops:1.0
+    ports:
+      - "80:80"
+
