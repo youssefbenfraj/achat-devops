@@ -16,7 +16,7 @@ services:
     container_name: achat-backend-app
     depends_on:
       - mysqldb
-    image: ineszaghdoudi/achat-devops:1.0
+    image: ineszaghdoudi/timesheetdevops:1.0
     restart: on-failure
     ports:
       - "8089:8089"
@@ -26,7 +26,7 @@ services:
       - SPRING_DATASOURCE_PASSWORD=
   achat-frontend-app:
     container_name: achat-frontend-app
-    image: ineszaghdoudi/achat-devops-front:1.0
+    image: ineszaghdoudi/frontdevops:1.0
     restart: on-failure
     ports:
       - "80:80"
