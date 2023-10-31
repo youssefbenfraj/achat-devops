@@ -13,9 +13,8 @@ services:
   mysql-db:
     image: mysql:5.7
     environment:
-      - MYSQL_ALLOW_EMPTY_PASSWORD
       - MYSQL_DATABASE=achatdb
-      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_ALLOW_EMPTY_PASSWORD
     ports:
       - "3306:3306"
     volumes:
