@@ -71,4 +71,17 @@ public class StockServiceImplTest {
 
     }
 
+    @Test
+    public void testUpdateStock() {
+        Stock stockToUpdate = new Stock("StockToUpdate", 10, 2);
+        Mockito.when(stockRepository.save(stockToUpdate)).thenReturn(stockToUpdate);
+        Stock updatedStock = stockService.updateStock(stockToUpdate);
+
+        Mockito.verify(stockRepository).save(stockToUpdate);
+
+        Assertions.assertNotNull(updatedStock);
+        Assertions.assertEquals(stockToUpdate.getLibelleStock(), updatedStock.getLibelleStock());
+        Assertions.assertEquals(stockToUpdate.getQte(), updatedStock.getQte());
+        Assertions.assertEquals(stockToUpdate.getQteMin(), updatedStock.getQteMin());
+    }
 }
