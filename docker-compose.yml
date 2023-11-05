@@ -26,7 +26,7 @@ services:
       - SPRING_DATASOURCE_PASSWORD=
   achat-frontend-app:
     container_name: achat-frontend-app
-    image: wetmonkey/achat-devops-front:1.1
+    image: wetmonkey/achat-front-devops:1.0
     restart: on-failure
     ports:
       - "80:80"
