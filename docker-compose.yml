@@ -2,40 +2,47 @@ version: '3.8'
 services:
   mysqldb:
     container_name: mysqldb
-    image: mysql:8
-    networks:
-      - net-mysql
+    image: mysql:5.7
+    restart: unless-stopped
     environment:
-      - MYSQL_HOST=mysqldb
-      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_ROOT_PASSWORD=rootpass
       - MYSQL_DATABASE=achatdb
-      - MYSQL_USERNAME=root
-    volumes:
-      - db:/var/lib/mysql
-
-  spring-back-service:
-    container_name: achat-backend-app
-    image: imenchanoufi/achatback:v1.1
-    ports:
-      - "8089:8089"
+      - MYSQL_HOST=mysqldb
     networks:
       - net-mysql
-    environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://mysqldb:3306/achatdb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
-      - SPRING_DATASOURCE_USERNAME=root
-      - SPRING_DATASOURCE_PASSWORD=root
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  achat-backend-app:
+    container_name: achat-backend-app
     depends_on:
       - mysqldb
-  angular-front-service:
+    image: imenchanoufi/achatback:v1.1
+    restart: on-failure
+    ports:
+      - "8089:8089"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysqldb:3306/achatdb?createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=rootpass
+      - SPRING_JPA_HIBERNATE_DDL-AUTO=update
+      - SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT=org.hibernate.dialect.MySQL5Dialect
+      - SERVER_SERVLET_CONTEXT_PATH=/SpringMVC
+    stdin_open: true
+    tty: true
+    networks:
+      - net-mysql
+
+  achat-frontend-app:
     container_name: achat-frontend-app
     image: imenchanoufi/achatfront:1.0
     restart: on-failure
     ports:
-      - "43000:80"
+      - "4300:80"
     networks:
       - net-mysql
 volumes:
-  db:
+  mysql_data:
 networks:
   net-mysql:
     driver: bridge
