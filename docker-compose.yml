@@ -6,7 +6,7 @@ services:
     restart: unless-stopped
     environment:
       - MYSQL_DATABASE=achatdb
-      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
     ports:
       - "3306:3306"
     volumes:
