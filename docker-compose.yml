@@ -35,7 +35,7 @@ services:
 
   achat-frontend-app:
     container_name: achat-frontend-app
-    image: imenchanoufi/achatfront:1.0
+    image: imenchanoufi/devopsmasterapp:v1.8
     restart: on-failure
     ports:
       - "4300:80"
