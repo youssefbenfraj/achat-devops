@@ -35,7 +35,7 @@ services:
 
   achat-frontend-app:
     container_name: achat-frontend-app
-    image: imenchanoufi/achatfront:v2.1
+    image: imenchanoufi/achatfront:v2.2
     restart: on-failure
     ports:
       - "4300:80"
