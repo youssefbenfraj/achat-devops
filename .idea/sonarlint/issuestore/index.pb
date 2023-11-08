@@ -20,3 +20,9 @@ Jsrc/main/java/tn/esprit/rh/achat/services/CategorieProduitServiceImpl.java,3\f
 Ssrc/test/java/tn/esprit/rh/achat/test/services/CategorieProduitServiceImplTest.java,4\0\40e9a742af7c9cf29521ed695f1d0b8d9a237459
 w
 Gsrc/main/java/tn/esprit/rh/achat/services/ICategorieProduitService.java,d\d\dd23b1c70350973455a886481065a955cd3a730f
+w
+Gsrc/main/java/tn/esprit/rh/achat/controllers/FactureRestController.java,f\0\f07e983b8d6f4bc3e16b7e2a5dbd872211ecc664
+q
+Asrc/main/java/tn/esprit/rh/achat/services/FactureServiceImpl.java,a\c\ac68ecddc0b282080251b254f5c490208d467cc0
+|
+Lsrc/main/java/tn/esprit/rh/achat/controllers/CategorieProduitController.java,c\1\c1a89e2c5d5f3966bce3e096d96c2d018b79d69f
