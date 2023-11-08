@@ -20,7 +20,7 @@ import java.util.*;
 
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
-public class ProduitServiceImplMock {
+ class TestProduitServiceImpl {
     @Mock
     ProduitRepository produitRepository= Mockito.mock(ProduitRepository.class);
 
@@ -40,13 +40,13 @@ public class ProduitServiceImplMock {
     };
 
     @Test
-    public void testretriveProduit(){
+     void testretriveProduit(){
         Mockito.when(produitRepository.findById(Mockito.anyLong())).thenReturn(Optional.of(produit));
         Produit produit1 = produitService.retrieveProduit(2l);
         Assertions.assertNotNull(produit1);
     }
     @Test
-    public void testCreateProduit() {
+     void testCreateProduit() {
         // Create a new product object or use a builder
         Produit newProduit = new Produit();
         newProduit.setCodeProduit("c4");
@@ -60,7 +60,7 @@ public class ProduitServiceImplMock {
         // You can add more assertions to verify that the product was created successfully.
     }
     @Test
-    public void testUpdateProduit() {
+     void testUpdateProduit() {
         // Assuming you have an existing product that you want to update
         Produit existingProduit = new Produit();
         existingProduit.setIdProduit(2L); // Use the ID of the existing product
@@ -76,7 +76,7 @@ public class ProduitServiceImplMock {
     }
 
     @Test
-    public void testDeleteProduit() {
+     void testDeleteProduit() {
         // Assuming you have an existing product that you want to delete
         Produit existingProduit = new Produit();
         existingProduit.setIdProduit(2L); // Use the ID of the product you want to delete
@@ -88,7 +88,6 @@ public class ProduitServiceImplMock {
         // Verify that the delete operation was called
         Mockito.verify(produitRepository, Mockito.times(1)).deleteById(existingProduit.getIdProduit());
     }
-
 
 
 
