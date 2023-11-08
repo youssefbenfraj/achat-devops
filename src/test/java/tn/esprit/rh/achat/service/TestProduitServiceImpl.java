@@ -21,7 +21,7 @@ import java.util.*;
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
 
- class TestProduitServiceImpl {
+ public class TestProduitServiceImpl {
     @Mock
     ProduitRepository produitRepository= Mockito.mock(ProduitRepository.class);
 
