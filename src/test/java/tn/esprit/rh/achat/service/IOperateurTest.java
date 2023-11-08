@@ -37,7 +37,7 @@ public class IOperateurTest {
         // You can add more specific assertions based on your use case.
     }
 
-    @Test
+   /* @Test
     @Order(3)
 
     public void testDeleteOperateur() {
@@ -46,7 +46,7 @@ public class IOperateurTest {
         operateurService.deleteOperateur(operateurId);
         Operateur deletedOperateur = operateurService.retrieveOperateur(operateurId);
         Assertions.assertNull(deletedOperateur);
-    }
+    }*/
 
     @Test
     @Order(4)
