@@ -1,4 +1,4 @@
-/*package tn.esprit.rh.achat.service;
+package tn.esprit.rh.achat.service;
 
 
 import org.junit.jupiter.api.Assertions;
@@ -94,4 +94,4 @@ public class ProduitServiceImplMock {
 
 
 
-        }*/
+        }
